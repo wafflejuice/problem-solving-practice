@@ -1,9 +1,6 @@
-
-
 def solution(str1, str2):
     answer = jacard(multiset(str1), multiset(str2))
     return answer
-
 
 def multiset(string):
     s = []
@@ -27,7 +24,6 @@ def jacard(set1, set2):
                 set2[j] = None
     
     return int(cnt / (len(set1) + len(set2) - cnt) * 65536)
-
 
 print(solution('FRANCE', 'french'))
 print(solution('handshake', 'shake hands'))

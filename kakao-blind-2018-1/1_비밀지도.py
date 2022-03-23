@@ -53,5 +53,9 @@ def num_to_bits(num):
         num //= radix
     return bits
 
+print(bin(10))
+print(type(bin(10)))
+print(9|10)
+
 print(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]))
 print(solution(6, [46, 33, 33 ,22, 31, 50], [27 ,56, 19, 14, 14, 10]))
