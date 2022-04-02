@@ -78,4 +78,4 @@ for s in sample_inputs:
     print(f's={s}\t\t m={m}')
 print()
 
-# 간당간당하게 5시간 걸렸나...
+# 카카오 블라인드 2018년 1차 다 푸는데 간당간당하게 5시간
