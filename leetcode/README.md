@@ -5,6 +5,23 @@ pair_dict = {i:j for i,j in zip(list1, list2)}
 ```
 Roman to Integer는 문자열을 순회하며 i-1, i번째 원소의 대소비교로 쉽게 구현 가능
 
+### 16. 3Sum Closest
+useful O(N^2) algorithm for 3-sum-problem
+```
+        for i in range(len(nums)):
+            lo,hi=i+1,len(nums)-1
+            while lo<hi:
+                sum_=nums[i]+nums[lo]+nums[hi]
+                ...
+                if sum_==target:
+                    return target
+                elif sum_>target:
+                    hi-=1
+                else:
+                    lo+=1
+```
+(i<lo<hi) lo, hi로 양방향에서 좁혀오는 탐색
+
 ### 289. Game of Life
 y, x 좌표로 표현되는 board에서 boundary check는 아래와 같이 간편하게 할 수 있다.  
 즉, 각 위치마다 복잡한 if문으로 valid한지 따지지 않아도 된다.
