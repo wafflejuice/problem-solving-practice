@@ -67,6 +67,10 @@ binary insertion
         return lo
 ```
 
+### 37. Sudoku Solver
+sudoku를 탐색할 때 모든 칸에 대해 available numbers를 저장하는 건 비효율적이다.  
+row에서 가능한 numbers, column에서 가능한 numbers, grid에서 가능한 numbers를 유지하는 게 훨씬 효율적이다.
+
 ### 289. Game of Life
 y, x 좌표로 표현되는 board에서 boundary check는 아래와 같이 간편하게 할 수 있다.  
 즉, 각 위치마다 복잡한 if문으로 valid한지 따지지 않아도 된다.
