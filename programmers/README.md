@@ -3,7 +3,7 @@
 Time efficiency가 아슬아슬했다.
 - [2020 카카오 인턴십/보석 쇼핑](https://programmers.co.kr/learn/courses/30/lessons/67258)  
 Time efficiency test를 몇 번이고 실패한 끝에 성공했으나 풀이가 간결하지 않다. multi-pointer algorithm으로 풀었는데 two pointer algorithm으로도 가능하다.
-- [2019 카카오 개발자 겨울 인턴십/불량 사용자](https://programmers.co.kr/learn/courses/30/lessons/64064)
+- [2019 카카오 개발자 겨울 인턴십/불량 사용자](https://programmers.co.kr/learn/courses/30/lessons/64064)  
 itertools.product 활용해보기
 
 ### 2019 카카오 개발자 겨울 인턴십/불량 사용자
@@ -25,4 +25,19 @@ print(sorted(s)) # [1, 2, 3]
 d = {1:'a', 3:'b', 2:'c'}
 print(sorted(d)) # [1, 2, 3]
 print(sorted(d.items(), key=lambda x:x[1])) # [1, 3, 2]
+```
+
+### 2020 카카오 인턴십/동굴 탐험
+자꾸 헷갈려 하는데 DFS에서 stack은 non-recursive할 때만 사용한다.  
+recursive DFS의 코드가 길어지면 뭔가 잘못됐음을 깨달아야 한다.
+
+```python
+def dfs(v, visit):
+    if v in visit:
+        return
+    visit.append(v)
+    for neighbor in links[v]:
+        dfs(neighbor, visit)
+
+dfs(start_v)
 ```

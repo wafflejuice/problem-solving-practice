@@ -78,4 +78,4 @@ fabric.properties
 
 # custom
 .idea
-leetcode/tests
+tests
