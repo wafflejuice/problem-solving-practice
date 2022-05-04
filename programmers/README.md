@@ -41,3 +41,27 @@ def dfs(v, visit):
 
 dfs(start_v)
 ```
+
+Topology sort
+```python
+    while len(q) > 0:
+        node = q.popleft()
+        visit.append(node)
+        for child in parent_children[node]:
+            indegree[child] -= 1
+            if indegree[child] == 0:
+                q.append(child)
+
+    print(visit)
+```
+
+dict로 하는 것도 좋지만 idx가 정해져있다면 one hot encoding도 고려해봄직 하다.
+```python
+a = dict()
+a[0] = ['a', 'b']
+a[1] = ['c']
+
+b = []
+b[0] = ['a', 'b']
+b[1] = ['c']
+```

@@ -121,20 +121,29 @@ def solution(n, path, order):
     from collections import deque
     
     parent_children = [[] for _ in range(n)]
-    indegree = dict()
-    for i in range(n):
-        indegree[i] = 0
+    indegree = [0 for _ in range(n)] # 사실 [0, 1, 1, 1, ... , 1] 과 같다.
 
     for a, b in path:
         parent_children[a].append(b)
         parent_children[b].append(a)
     
+    q = deque([0])
+    while len(q) > 0:
+        node = q.popleft()
+        for neighbor in parent_children[node]:
+            q.append(neighbor)
+            indegree[neighbor] += 1
+            parent_children[neighbor].remove(node)
+    
+    # print(parent_children)
+    # print(indegree)
+    
     # tree generation with indegree cnt?
     # tree generation, then indegree cnt?
     
-    for pair in order:
-        parent_children[pair[0]].append(pair[1])
-        indegree[pair[1]] += 1
+    for a, b in order:
+        parent_children[a].append(b)
+        indegree[b] += 1
     
     visit_cnt = 0
     q = deque([0])
