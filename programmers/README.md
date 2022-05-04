@@ -44,24 +44,29 @@ dfs(start_v)
 
 Topology sort
 ```python
-    while len(q) > 0:
-        node = q.popleft()
-        visit.append(node)
-        for child in parent_children[node]:
-            indegree[child] -= 1
-            if indegree[child] == 0:
-                q.append(child)
-
-    print(visit)
+q = deque([0])
+visit = []
+while len(q) > 0:
+    node = q.popleft()
+    visit.append(node)
+    for child in children_of[node]:
+        indegree[child] -= 1
+        if indegree[child] == 0:
+            q.append(child)
+print(visit) # Topology sorted
 ```
 
-dict로 하는 것도 좋지만 idx가 정해져있다면 one hot encoding도 고려해봄직 하다.
+dict도 좋지만 key가 정수이고 밀집되어 있다면 list도 고려해봄직 하다.
 ```python
 a = dict()
 a[0] = ['a', 'b']
 a[1] = ['c']
+...
+# {0:['a', 'b'], 1:['c'], ...}
 
 b = []
 b[0] = ['a', 'b']
 b[1] = ['c']
+...
+# [['a', 'b'], ['c'], ...]
 ```

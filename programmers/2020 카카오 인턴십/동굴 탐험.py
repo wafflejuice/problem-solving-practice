@@ -135,12 +135,6 @@ def solution(n, path, order):
             indegree[neighbor] += 1
             parent_children[neighbor].remove(node)
     
-    # print(parent_children)
-    # print(indegree)
-    
-    # tree generation with indegree cnt?
-    # tree generation, then indegree cnt?
-    
     for a, b in order:
         parent_children[a].append(b)
         indegree[b] += 1
