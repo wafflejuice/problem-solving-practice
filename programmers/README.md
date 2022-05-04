@@ -29,7 +29,7 @@ print(sorted(d.items(), key=lambda x:x[1])) # [1, 3, 2]
 
 ### 2020 카카오 인턴십/동굴 탐험
 자꾸 헷갈려 하는데 DFS에서 stack은 non-recursive할 때만 사용한다.  
-recursive DFS의 코드가 길어지면 뭔가 잘못됐음을 깨달아야 한다.
+recursive DFS 코드가 길어지면... 뭔가 잘못됐다!
 
 ```python
 def dfs(v, visit):
@@ -69,4 +69,14 @@ b[0] = ['a', 'b']
 b[1] = ['c']
 ...
 # [['a', 'b'], ['c'], ...]
+```
+
+### 2019 KAKAO BLIND RECRUITMENT/후보키
+set 종속관계 판별
+```python
+# check if set1 is a subset of set2
+set1 = {0, 1, 4, 2}
+set2 = {5, 4, 2, 0, 1}
+print(set1 <= set2) # correct
+print(set1 in set2) # NOT correct
 ```
