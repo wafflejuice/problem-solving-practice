@@ -1,9 +1,8 @@
 def solution(n, k, cmd):
-    active_records = [i for i in range(n)]
-    active_idx = k
+    records = [[i-1, i+1] for i in range(n)]
     acc = 0
     
-    del_history = [None for _ in range(200000)]
+    del_history = [-1 for _ in range(n)]
     del_idx = -1
 
     for op in cmd:
@@ -17,28 +16,41 @@ def solution(n, k, cmd):
             acc += int(op_split[1])
             
         elif op_code == "C":
-            active_idx += acc
+            if acc > 0:
+                for i in range(acc):
+                    k = records[k][1]
+            elif acc < 0:
+                for i in range(-acc):
+                    k = records[k][0]
             acc = 0
             del_idx += 1
-            del_history[del_idx] = (active_records[active_idx], active_idx)
-            if active_idx == len(active_records)-1:
-                active_records.pop(-1)
-                active_idx -= 1
+            del_history[del_idx] = k
+            if records[k][1] == n:
+                records[records[k][0]][1] = records[k][1]
+                k = records[k][0]
             else:
-                active_records.pop(active_idx)
+                records[records[k][0]][1], records[records[k][1]][0] = records[k][1], records[k][0]
+                k = records[k][1]
             
         else:
-            active_idx += acc
+            if acc > 0:
+                for i in range(acc):
+                    k = records[k][1]
+            elif acc < 0:
+                for i in range(-acc):
+                    k = records[k][0]
             acc = 0
-            last_del_val, last_del_idx = del_history[del_idx]
+            last_del_idx = del_history[del_idx]
             del_idx -= 1
-            if last_del_idx <= active_idx:
-                active_idx += 1
-            active_records.insert(last_del_idx, last_del_val)
+            if records[last_del_idx][1] == n:
+                records[records[last_del_idx][0]][1] = last_del_idx
+            else:
+                records[records[last_del_idx][0]][1] = last_del_idx
+                records[records[last_del_idx][1]][0] = last_del_idx
 
     ans = ["O" for _ in range(n)]
     for di in range(del_idx+1):
-        ans[del_history[di][0]] = "X"
+        ans[del_history[di]] = "X"
 
     return ''.join(ans)
 
