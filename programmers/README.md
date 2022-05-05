@@ -80,3 +80,9 @@ set2 = {5, 4, 2, 0, 1}
 print(set1 <= set2) # correct
 print(set1 in set2) # NOT correct
 ```
+
+### 2021 카카오 채용연계형 인턴십/표 편집
+정확성 테스트는 1시간 내로 구현했으나 시간 효율성 테스트에 수 시간이 소요된 문제.  
+python에서 linked list를 간이 구현하는 경험을 할 수 있다. list에서 O(n)인 append, pop을 제거하는 것이 관건이었다. (bisect를 사용하더라도 search가 O(log n)으로 줄어드는 것이지 insert, delete는 여전히 O(n)이다.)  
+list의 모든 element가 자신의 **유효한** 이전 element와 **유효한** 다음 element를 저장하도록 하여 O(n)을 O(1)으로 줄였다.  
+굳이 python 내장 list에 잡다한 정보를 넣는 것보단 LinkedList 같은 user class를 정의하는 편이 더 가독성 좋고 이해하기 쉬웠을 것 같다.
