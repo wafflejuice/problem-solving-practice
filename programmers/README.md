@@ -24,7 +24,7 @@ s = {1, 3, 2}
 print(sorted(s)) # [1, 2, 3]
 d = {1:'a', 3:'b', 2:'c'}
 print(sorted(d)) # [1, 2, 3]
-print(sorted(d.items(), key=lambda x:x[1])) # [1, 3, 2]
+print(sorted(d.items(), key=lambda x:x[1])) # [(1, 'a'), (3, 'b'), (2, 'c')]
 ```
 
 ### 2020 카카오 인턴십/동굴 탐험
