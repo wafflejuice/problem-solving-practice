@@ -9,3 +9,7 @@ for k in range(1, n+1):
             if new_w < graph[i][j]:
                 graph[i][j] = new_w
 ```
+
+### [2178]미로 탐색
+sparse graph에서는 이웃 list로 구성하는 편이 (whole matrix를 저장하는 것보다) 빠르고 메모리를 적게 쓴다.  
+가중치가 1로 고정되어 있으면 Dijkstra보다 BFS가 빠르다.
