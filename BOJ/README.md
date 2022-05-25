@@ -13,3 +13,16 @@ for k in range(1, n+1):
 ### [2178]미로 탐색
 sparse graph에서는 이웃 list로 구성하는 편이 (whole matrix를 저장하는 것보다) 빠르고 메모리를 적게 쓴다.  
 가중치가 1로 고정되어 있으면 Dijkstra보다 BFS가 빠르다.
+
+### [10026]적록색약
+and, or 괄호를 제대로 안 닫아주는 초보적인 실수로 오답 제출. and가 or보다 우선순위가 높다.  
+```python
+# INCORRECT
+if 0<=xi-1 and (matrix[yi][xi-1] == 'R' and matrix[yi][xi] == 'G') or (matrix[yi][xi-1] == 'G' and matrix[yi][xi] == 'R'):
+    
+# correct
+if 0<=xi-1:
+    if (matrix[yi][xi-1] == 'R' and matrix[yi][xi] == 'G') or (matrix[yi][xi-1] == 'G' and matrix[yi][xi] == 'R'):
+        graph[yi * n + xi].append(yi * n + (xi-1))
+        graph[yi * n + (xi-1)].append(yi * n + xi)
+```
