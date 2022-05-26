@@ -26,3 +26,25 @@ if 0<=xi-1:
         graph[yi * n + xi].append(yi * n + (xi-1))
         graph[yi * n + (xi-1)].append(yi * n + xi)
 ```
+
+### [16236]아기 상어
+2D matrix(mat[y][x]) 대신 1D matrix(mat[y*n+x])를 사용할 경우  
+
+Pros)
+1. tuple operation을 처리할 필요가 없어 편리하다.  
+
+Cons)
+1. 경계값을 구하기 번거롭다.
+2. 자칫하면 2D와 비슷할 거라고 착각해 인접한 element 판별을 틀릴 수 있다.  
+
+```python
+# 1D
+if v % n != 0:
+    adjs.append(v-1)
+if v % n != n - 1:
+    adjs.append(v + 1)
+if v // n != 0:
+    adjs.append(v - n)
+if v // n != n - 1:
+    adjs.append(v + n)
+```
