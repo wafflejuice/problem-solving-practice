@@ -73,3 +73,7 @@ BFS라는 것도 금방 깨달았고, 최적화도 금방 했지만 계속 시�
 ### [16566]카드 게임
 union-find  
 이진 탐색에서 unavailable value가 존재할 때 유용하다. unavailable idx가 자신의 우측에서 가장 작은 available idx를 parent로 갖도록 한다.  
+
+### [14003]가장 긴 증가하는 부분 수열
+LIS(Longest Increasing Subsequence) algorithm. Well-known이라고 한다.  
+기본적인 전략은 DP이다. memo[i]는 i+1의 length를 가지는 subsequence 중 가장 작은 마지막 값이다. 이대로 풀면 O(n^2) time complexity를 가지므로, binary search를 사용해 O(n log n)로 줄여줘야 시간 효율성 테스트를 통과할 수 있다.  
