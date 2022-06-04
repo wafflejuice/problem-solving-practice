@@ -77,3 +77,6 @@ union-find
 ### [14003]가장 긴 증가하는 부분 수열
 LIS(Longest Increasing Subsequence) algorithm. Well-known이라고 한다.  
 기본적인 전략은 DP이다. memo[i]는 i+1의 length를 가지는 subsequence 중 가장 작은 마지막 값이다. 이대로 풀면 O(n^2) time complexity를 가지므로, binary search를 사용해 O(n log n)로 줄여줘야 시간 효율성 테스트를 통과할 수 있다.  
+
+### [2422]한윤정이 이탈리아에 가서 아이스크림을 사먹는데
+Brute Force algorithm보다 나은 방법을 생각하느라 시간이 좀 걸렸지만 Brute Force로 풀리는 문제였다. Brute Force algorithm은 PS에서 사용하기 꺼려지는 측면이 있다.  
