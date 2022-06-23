@@ -80,3 +80,6 @@ LIS(Longest Increasing Subsequence) algorithm. Well-known이라고 한다.
 
 ### [2422]한윤정이 이탈리아에 가서 아이스크림을 사먹는데
 Brute Force algorithm보다 나은 방법을 생각하느라 시간이 좀 걸렸지만 Brute Force로 풀리는 문제였다. Brute Force algorithm은 PS에서 사용하기 꺼려지는 측면이 있다.  
+
+### [18111]마인크래프트
+Python3라서 어려웠던 문제. 약간의 최적화를 거친 Brute Force로는 시간 초과가 나서 좀더 효율적인 방법으로 접근해 맞았으나, 그냥 초기 풀이를 PyPy3로 제출하면 맞는 문제였다.
